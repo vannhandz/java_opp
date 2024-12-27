@@ -3,8 +3,23 @@ package phanso;
 import java.util.Scanner;
 
 public class PhanSo {
-    double tu;
-    double mau;
+    private double tu;
+    private double mau;
+
+    public PhanSo() {}
+
+    public PhanSo(double tu, double mau) {
+        this.tu = tu;
+        this.mau = mau;
+    }
+
+    public double getTu() {return tu;}
+
+    public void setTu(double tu) {this.tu = tu;}
+
+    public double getMau() {return mau;}
+
+    public void setMau(double mau) {this.mau = mau;}
 
     public void input() {
         Scanner sc = new Scanner(System.in);
@@ -19,51 +34,48 @@ public class PhanSo {
         }while(mau<0);
     }
 
-    public double uscln(double a,double b) {
-        double ucln=0;
-        for (double i = a; i>=1; i--) {
-            if(a%i==0 && b%i==0) {
-                ucln=i;
-                break;
-            }
-        }
-        return ucln;
+    public void output() {
+        rutGon();
     }
-    //
+
+    private double uscln(double a, double b) {
+        if (b == 0) return a;
+        return uscln(b, a % b);
+    }
+
     public void rutGon() {
         double ucln= uscln(tu,mau);
         tu/=ucln;
         mau/=ucln;
-        if(mau<0) {
-            tu=-tu;
-            mau=-mau;
-        }
-        System.out.println(tu < mau ? "phan so sau rut gon: "+tu + "/" + mau : "phan so sau rut gon: "+tu/ mau);
+        System.out.println(mau>1 ?  tu + "/" + mau : tu/ mau);
     }
 
-    public double tongPs(){
-        return tu+mau;
+
+    public PhanSo cong(PhanSo ps){
+        PhanSo cong=new PhanSo();
+        cong.tu=this.tu*ps.mau+this.mau*ps.tu;
+        cong.mau=this.mau*ps.mau;
+        return cong;
     }
-    public double hieuPs(){
-        return tu-mau;
+    public PhanSo tru(PhanSo ps){
+        PhanSo tru=new PhanSo();
+        tru.tu=this.tu*ps.mau-this.mau*ps.tu;
+        tru.mau=this.mau*ps.mau;
+        return tru;
     }
-    public double tichPs(){
-        return tu*mau;
+    public PhanSo nhan(PhanSo ps){
+        PhanSo nhan=new PhanSo();
+        nhan.tu=this.tu*ps.tu;
+        nhan.mau=this.mau*ps.mau;
+        return nhan;
     }
-    public double thuongPs(){
-        return tu/mau;
+    public PhanSo chia(PhanSo ps){
+        PhanSo chia=new PhanSo();
+        chia.tu=this.tu*ps.mau;
+        chia.mau=this.mau*ps.tu;
+        return chia;
     }
 
-    public void checkPs(){
-        if(tu==0&&mau==0) {
-            System.out.println("phan so : 1");
-        }else if( tichPs() > 0 || tu==0){
-            System.out.println("phan so duong");
-        }else
-        {
-            System.out.println("phan so am");
-        }
-    }
 
 
 
