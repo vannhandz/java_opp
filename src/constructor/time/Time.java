@@ -51,7 +51,7 @@ public class Time {
 
     public void outPut()
     {
-        System.out.println(hour + ":" + minute + ":" + second);
+        System.out.printf("%02d:%02d:%02d\n", hour, minute, second);
     }
 
 }
