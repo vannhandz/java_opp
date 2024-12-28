@@ -12,8 +12,6 @@ public class Main {
         student.display();
         student.display();
         student2.display();
-//        System.out.println(student2.getName());
-
 
     }
 }

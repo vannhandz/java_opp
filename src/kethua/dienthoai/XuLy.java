@@ -3,7 +3,7 @@ package kethua.dienthoai;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class XuLy {
+public class XuLy extends Phone{
     static Scanner sc = new Scanner(System.in);
     static ArrayList<PhoneNew> phoneNews = new ArrayList<>();
     static ArrayList<PhoneOld> phoneOlds = new ArrayList<>();
@@ -123,6 +123,7 @@ public class XuLy {
             System.out.println("ID khong hop le!");
         }
     }
+
 
 
 

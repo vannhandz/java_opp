@@ -1,6 +1,5 @@
 package kethua.dienthoai;
 
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class PhoneNew extends Phone{

@@ -1,9 +1,7 @@
 package kethua.dienthoai;
 
-import java.sql.SQLOutput;
-import java.time.LocalDate;
 import java.util.Scanner;
-import java.util.SortedMap;
+
 
 public class PhoneOld extends Phone {
     private int tinhTrangPin;

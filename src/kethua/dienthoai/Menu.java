@@ -1,8 +1,6 @@
 package kethua.dienthoai;
 
-import java.sql.Time;
 import java.util.Scanner;
-import java.util.Timer;
 
 public class Menu {
     static Scanner input = new Scanner(System.in);
