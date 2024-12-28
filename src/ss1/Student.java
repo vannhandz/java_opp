@@ -6,7 +6,7 @@ public class Student {
     private int id;
     String name;
     double score;
-
+    static int dem=0;
     public int getId() {
         return id;
     }
@@ -32,12 +32,13 @@ public class Student {
     }
 
     Student(){
-
+        dem++;
     }
     Student(int id, String name, double score) {
         this.id = id;
         this.name = name;
         this.score = score;
+        dem++;
     }
 
 
@@ -54,6 +55,7 @@ public class Student {
         System.out.println("id: "+id);
         System.out.println("name: "+name);
         System.out.println("score: "+score);
+        System.out.println("dem: "+dem);
     }
 
 }
