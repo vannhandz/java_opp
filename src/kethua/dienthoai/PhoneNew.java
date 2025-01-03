@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class PhoneNew extends Phone{
     private int soLuong;
-    private String id="DTM";
+    private String idNew="DTM";
     static private int xxx=0;
-
     public PhoneNew() {
         xxx++;
+        this.setId(String.format("%s%03d", idNew, xxx));
     }
 
-    public PhoneNew(String tenDt, int price, String thoiGianBh, String hangXs, int soLuong) {
-        super(tenDt, price, thoiGianBh, hangXs);
+    public PhoneNew(String tenDt, int price, String thoiGianBh, String hangXs, int soLuong,String id) {
+        super(tenDt, price, thoiGianBh, hangXs,id);
         this.soLuong = soLuong;
-        this.id = id;
         xxx++;
-    }
+        this.setId(String.format("%s%03d", idNew, xxx));
 
+    }
     public int getSoLuong() {
         return soLuong;
     }
@@ -25,23 +25,6 @@ public class PhoneNew extends Phone{
     public void setSoLuong(int soLuong) {
         this.soLuong = soLuong;
     }
-
-    public String getId() {
-        return  String.format("%s%03d", id, xxx);
-    }
-
-//    public void setId(String id) {
-//        this.id = id;
-//    }
-
-    private static int getXxx() {
-        return xxx;
-    }
-
-    private static void setXxx(int xxx) {
-        PhoneNew.xxx = xxx;
-    }
-
 
     public  void input()
     {
@@ -52,9 +35,10 @@ public class PhoneNew extends Phone{
     }
     public void output() {
 
-        System.out.println("Id: "+getId());
         super.output();
         System.out.println("SoLuong: " + soLuong);
-
+        System.out.println("=======================");
     }
+
+
 }

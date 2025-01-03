@@ -6,34 +6,20 @@ import java.util.Scanner;
 public class PhoneOld extends Phone {
     private int tinhTrangPin;
     private String detail;
-    private String id = "DTC";
-    static private int xxx = 0;
-
+    private String idOld = "DTC";
+    private static int xxx = 0;
     public PhoneOld() {
         xxx++;
+        this.setId(String.format("%s%03d", idOld, xxx));
     }
 
-    public PhoneOld(String tenDt, int price, String thoiGianBh, String hangXs, String detail, int tinhTrangPin) {
-        super(tenDt, price, thoiGianBh, hangXs);
+    public PhoneOld(String tenDt, int price, String thoiGianBh, String hangXs, String detail, int tinhTrangPin, String id) {
+        super(tenDt, price, thoiGianBh, hangXs,id);
         this.detail = detail;
         this.tinhTrangPin = tinhTrangPin;
         xxx++;
-    }
+        this.setId(String.format("%s%03d", idOld, xxx));
 
-    public String getId() {
-        return String.format("%s%03d", id, xxx);
-    }
-
-//    public void setId(String id) {
-//        this.id = id;
-//    }
-
-    private static int getXxx() {
-        return xxx;
-    }
-
-    private static void setXxx(int xxx) {
-        PhoneOld.xxx = xxx;
     }
 
     public int getTinhTrangPin() {
@@ -62,10 +48,10 @@ public class PhoneOld extends Phone {
     }
 
     public void output() {
-        System.out.println("Id: "+getId());
         super.output();
         System.out.println("Tinh trang pin: " + tinhTrangPin);
         System.out.println("Mo ta: " + detail);
+        System.out.println("=======================");
 
     }
 }

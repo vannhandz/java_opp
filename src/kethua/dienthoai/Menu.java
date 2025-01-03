@@ -32,7 +32,7 @@ public class Menu {
                         updatePhone();
                         break;
                     case 4:
-                        remotePhone();
+                        deletePhone();
                         break;
                     case 5:
                         sortPrice();
@@ -113,9 +113,9 @@ public class Menu {
     {
         XuLy.updatePhone();
     }
-    private void remotePhone()
+    private void deletePhone()
     {
-        XuLy.remotePhone();
+        XuLy.deletePhone();
     }
     private void sortPrice()
     {
@@ -130,7 +130,11 @@ public class Menu {
             switch (luaChon)
             {
                 case 1:
+                    XuLy.sortPrice();
+                    break;
                 case 2:
+                    XuLy.redudePrice();
+                    break;
                 case 3:
                     return;
                 default:
@@ -153,13 +157,13 @@ public class Menu {
                 switch (luaChon)
                 {
                     case 1:
-                        menuFindPhone();
+                        findAllPhone();
                         break;
                     case 2:
-                        menuFindPhone();
+                        findPhoneOld();
                         break;
                     case 3:
-                        menuFindPhone();
+                        findPhoneNew();
                         break;
                     case 4:
                         return;
@@ -170,11 +174,11 @@ public class Menu {
         }
     }
 
-    private void menuFindPhone()
+    private void findAllPhone()
     {
         while (true)
         {
-            System.out.println("=======================");
+
             System.out.println("1. Tim kiem theo gia.");
             System.out.println("2. Tim kiem theo ten.");
             System.out.println("3. Tim kiem theo hang.");
@@ -184,10 +188,13 @@ public class Menu {
             switch (luaChon)
             {
                 case 1:
+                    XuLy.findAllPhone();
                     break;
                 case 2:
+                    XuLy.findAllPhoneName();
                     break;
                 case 3:
+                    XuLy.findAllPhoneBrand();
                     break;
                 case 4:
                     return;
@@ -197,9 +204,74 @@ public class Menu {
         }
     }
 
+
+    private void findPhoneNew()
+    {
+        while (true)
+        {
+
+            System.out.println("1. Tim kiem theo gia.");
+            System.out.println("2. Tim kiem theo ten.");
+            System.out.println("3. Tim kiem theo hang.");
+            System.out.println("4. Tro ve");
+            System.out.print("Nhap lua chon: ");
+            luaChon = Integer.parseInt(input.nextLine());
+            switch (luaChon)
+            {
+                case 1:
+                    XuLy.findPhoneNew();
+                    break;
+                case 2:
+                    XuLy.findPhoneNewName();
+                    break;
+                case 3:
+                    XuLy.findPhoneNewBrand();
+                    break;
+                case 4:
+                    return;
+                default:
+                    System.out.println("Lua chon khong hop le! Nhap lai.");
+            }
+        }
+    }
+
+
+    private void findPhoneOld()
+    {
+        while (true)
+        {
+
+            System.out.println("1. Tim kiem theo gia.");
+            System.out.println("2. Tim kiem theo ten.");
+            System.out.println("3. Tim kiem theo hang.");
+            System.out.println("4. Tro ve");
+            System.out.print("Nhap lua chon: ");
+            luaChon = Integer.parseInt(input.nextLine());
+            switch (luaChon)
+            {
+                case 1:
+                    XuLy.findPhoneOld();
+                    break;
+                case 2:
+                    XuLy.findPhoneOldName();
+                    break;
+                case 3:
+                    XuLy.findPhoneOldBrand();
+                    break;
+                case 4:
+                    return;
+                default:
+                    System.out.println("Lua chon khong hop le! Nhap lai.");
+            }
+        }
+    }
+
+
+
+
     private void sumPrice()
     {
-
+        System.out.println("Tong tien: " +XuLy.sumPrice()+"$");
     }
     private void discountPhoneOld()
     {

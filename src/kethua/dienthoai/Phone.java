@@ -2,27 +2,34 @@ package kethua.dienthoai;
 
 import java.util.Scanner;
 
-public class Phone {
+public abstract class Phone {
 
     private String tenDt;
     private int price;
     private String thoiGianBh;
     private String hangXs;
+    private String id;
 
     public Phone(){
 
     }
 
-    public Phone(String tenDt, int price, String thoiGianBh, String hangXs) {
+    public Phone(String tenDt, int price, String thoiGianBh, String hangXs, String id) {
         this.tenDt = tenDt;
         this.price = price;
         this.thoiGianBh = thoiGianBh;
         this.hangXs = hangXs;
-
+        this.id = id;
     }
 
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
     public String getTenDt() {
         return tenDt;
     }
@@ -71,8 +78,9 @@ public class Phone {
 
     public void output() {
 
+        System.out.println("ID: "+getId());
         System.out.println("TenDt: " + tenDt);
-        System.out.println("Price: " + price);
+        System.out.println("Price: " + price+"$");
         System.out.println("ThoiGianBh: " + thoiGianBh);
         System.out.println("HangXs: " + hangXs);
 
