@@ -1,6 +1,8 @@
 package kethua.dienthoai;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class XuLy {
@@ -126,24 +128,12 @@ public class XuLy {
     //5 tang dan
     static void sortPrice() {
         for (int i = 0; i < phones.size(); i++) {
-            for (int j = i + 1; j < phones.size(); j++) {
-                if (phones.get(i).getPrice() > phones.get(j).getPrice()) {
-                    Phone temp = phones.get(i);
-                    phones.set(i, phones.get(j));
-                    phones.set(j, temp);
-                }
-            }
+            Collections.sort(phones);
         }
     }
     static void redudePrice() {
         for (int i = 0; i < phones.size(); i++) {
-            for (int j = i + 1; j < phones.size(); j++) {
-                if (phones.get(i).getPrice() < phones.get(j).getPrice()) {
-                    Phone temp = phones.get(i);
-                    phones.set(i, phones.get(j));
-                    phones.set(j, temp);
-                }
-            }
+           phones.sort(Collections.reverseOrder());
         }
     }
 

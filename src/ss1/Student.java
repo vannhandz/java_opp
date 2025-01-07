@@ -31,7 +31,7 @@ public class Student {
         this.score = score;
     }
 
-    Student(){
+    public Student(){
         dem++;
     }
     Student(int id, String name, double score) {

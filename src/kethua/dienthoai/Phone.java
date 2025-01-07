@@ -2,7 +2,7 @@ package kethua.dienthoai;
 
 import java.util.Scanner;
 
-public abstract class Phone {
+public abstract class Phone implements Comparable<Phone> {
 
     private String tenDt;
     private int price;
@@ -14,6 +14,7 @@ public abstract class Phone {
 
     }
 
+
     public Phone(String tenDt, int price, String thoiGianBh, String hangXs, String id) {
         this.tenDt = tenDt;
         this.price = price;
@@ -22,6 +23,10 @@ public abstract class Phone {
         this.id = id;
     }
 
+    @Override
+    public int compareTo(Phone o) {
+        return Double.compare(this.price, o.price);
+    }
 
     public String getId() {
         return id;
